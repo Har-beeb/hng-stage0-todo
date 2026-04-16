@@ -8,7 +8,7 @@
   </head>
   <body>
     <main class="container">
-      <article data-testid="test-todo-card" class="todo-card">
+      <!-- <article data-testid="test-todo-card" class="todo-card">
         <h2 data-testid="test-todo-title" id="todo-title">
           Submit Stage 0 Task
         </h2>
@@ -113,6 +113,279 @@
             </button>
           </div>
         </div>
+      </article> -->
+      <article data-testid="test-todo-card" class="todo-card" id="task-card">
+        <div id="display-view" class="view-section">
+          <div class="meta-info">
+            <!-- <span
+              data-testid="test-todo-priority-indicator"
+              id="display-priority"
+              class="priority-badge priority-high"
+            >
+              High
+            </span> -->
+            <span
+              data-testid="test-todo-priority-indicator"
+              id="display-priority"
+              class="priority-badge priority-high"
+            >
+              <svg
+                id="svg-high"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"
+                ></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+
+              <svg
+                id="svg-medium"
+                class="hidden"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+              </svg>
+
+              <svg
+                id="svg-low"
+                class="hidden"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 5v14"></path>
+                <path d="m19 12-7 7-7-7"></path>
+              </svg>
+
+              <span id="priority-text">High</span>
+            </span>
+
+            <select
+              data-testid="test-todo-status-control"
+              id="status-control"
+              aria-label="Change task status"
+            >
+              <option value="Pending">Pending</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+            </select>
+          </div>
+
+          <h2
+            data-testid="test-todo-title"
+            id="display-title"
+            class="task-title"
+          >
+            Submit Stage 0 Task
+          </h2>
+
+          <div
+            data-testid="test-todo-collapsible-section"
+            id="desc-container"
+            class="desc-collapsed"
+          >
+            <p data-testid="test-todo-description" id="display-desc">
+              Complete the HNG internship frontend task using Vanilla JS. This
+              text might get very long so we need to ensure it can collapse and
+              expand properly based on user interaction to keep the UI clean.
+            </p>
+          </div>
+          <button
+            data-testid="test-todo-expand-toggle"
+            id="expand-btn"
+            aria-expanded="false"
+            aria-controls="desc-container"
+            class="text-btn hidden"
+          >
+            Read More
+          </button>
+
+          <div class="date-info">
+            <time
+              data-testid="test-todo-due-date"
+              id="display-date"
+              class="icon-text-group"
+            >
+              Due Apr 16, 2026
+            </time>
+
+            <div class="time-wrapper">
+              <span
+                data-testid="test-todo-overdue-indicator"
+                id="overdue-badge"
+                class="badge-danger hidden"
+                >Overdue</span
+              >
+              <p
+                data-testid="test-todo-time-remaining"
+                id="time-remaining"
+                aria-live="polite"
+              ></p>
+            </div>
+          </div>
+
+          <ul data-testid="test-todo-tags" id="display-tags" class="tags-list">
+            <li data-testid="test-todo-tag-work">work</li>
+            <li data-testid="test-todo-tag-urgent">urgent</li>
+          </ul>
+
+          <div class="actions">
+            <label class="checkbox-container">
+              <input
+                type="checkbox"
+                data-testid="test-todo-complete-toggle"
+                id="complete-checkbox"
+              />
+              Mark as complete
+            </label>
+
+            <div class="buttons">
+              <button data-testid="test-todo-edit-button" id="edit-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 20h9"></path>
+                  <path
+                    d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                  ></path>
+                </svg>
+                Edit
+              </button>
+              <button data-testid="test-todo-delete-button" id="delete-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="3 6 5 6 21 6"></polyline>
+                  <path
+                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                  ></path>
+                </svg>
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <form
+          data-testid="test-todo-edit-form"
+          id="edit-form"
+          class="view-section hidden"
+        >
+          <div class="form-group">
+            <label for="edit-title">Title</label>
+            <input
+              type="text"
+              data-testid="test-todo-edit-title-input"
+              id="edit-title"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="edit-desc">Description</label>
+            <textarea
+              data-testid="test-todo-edit-description-input"
+              id="edit-desc"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="edit-tags">Tags (comma separated)</label>
+            <!-- <input
+              type="text"
+              data-testid="test-todo-edit-tags-input"
+              id="edit-tags"
+            /> -->
+            <input
+              type="text"
+              id="edit-tags"
+              data-testid="test-todo-edit-tags-input"
+              value="work, urgent"
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group half-width">
+              <label for="edit-priority">Priority</label>
+              <select
+                data-testid="test-todo-edit-priority-select"
+                id="edit-priority"
+              >
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
+            </div>
+
+            <div class="form-group half-width">
+              <label for="edit-date">Due Date</label>
+              <input
+                type="datetime-local"
+                data-testid="test-todo-edit-due-date-input"
+                id="edit-date"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="actions edit-actions">
+            <button
+              type="button"
+              data-testid="test-todo-cancel-button"
+              id="cancel-button"
+              class="btn-secondary"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              data-testid="test-todo-save-button"
+              id="save-button"
+              class="btn-primary"
+            >
+              Save Changes
+            </button>
+          </div>
+        </form>
       </article>
     </main>
 

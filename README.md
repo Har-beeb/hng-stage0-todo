@@ -12,6 +12,18 @@ A highly responsive, accessible, and interactive Todo Card built purely with Sem
 * **Timezone-Aware Logic:** Calculates time remaining accurately based on the West Africa Time (WAT / UTC+1) deadline.
 * **DRY CSS Architecture:** Reusable, grouped CSS classes for scalable SVG alignment and component spacing.
 
+## Updates
+## Stage 1a Update: Interactive State Management
+* Refactored the static Vanilla JS card into a fully stateful component using a unidirectional data-flow pattern (a "Mini-React" architecture). Features include:
+
+* **Edit Mode:** Toggleable form to update task data with focus-trapping.
+
+* **State Syncing:** Checkbox and Status dropdown are mathematically synced via a single source of truth.
+
+* **Dynamic UI:** SVGs, Tag colors, and "Done" strike-throughs update automatically based on state.
+
+* **Granular Time Logic:** Live interval timer that switches between days, hours, and minutes, stopping automatically when marked complete.
+
 ## 🛠️ Technologies Used
 * HTML5 (Semantic Structure)
 * CSS3 (Flexbox, Variables, Fluid Typography)
